@@ -12,15 +12,19 @@ import pickle
 import os
 from datetime import datetime
 PRTFLAG = False
+import sys
+
 
 from bert_base.train.models import create_model, InputFeatures
 from bert_base.bert import tokenization, modeling
 from bert_base.train.train_helper import get_args_parser
 
 args = get_args_parser()
-
-model_dir = '/Users/boxiao/car_ner/car'
-bert_dir = '/Users/boxiao/car_ner/chinese_L-12_H-768_A-12'
+#该部分需要在安装时进行设置，主要就是本地的安装目录
+os.chdir(sys.path[0]);
+dir_name = os.path.abspath(os.path.join(os.getcwd(),"."));
+model_dir = dir_name+'/car'
+bert_dir = dir_name+'/chinese_L-12_H-768_A-12'
 
 is_training=False
 use_one_hot_embeddings=False
