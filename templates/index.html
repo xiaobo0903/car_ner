@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link href="{{ url_for('static',filename='css/bootstrap.min.css') }}" rel="stylesheet">
+</head>
+<body>
+    <form action="/car-info-ner" method="POST">
+ 
+        <textarea name="car_txt">{{ car_txt }}</textarea>
+        <input type="submit" value="提交">
+    </form>
+</body>
+</html>
